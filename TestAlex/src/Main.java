@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 class Homework3 {
@@ -17,18 +16,16 @@ class Homework3 {
     }
 
     int ifwhile(int y) {
-        while (true) {
-            if (100 >= y & 0 <= y) {
-                System.out.println("Вы ввели значение из диопазаона!");
-                return y;
-            }
+        while (100 < y || y < 0) {
             System.out.println("Значение за границами диапазона (от 100 до 0), повторите еще раз:");
             y = scanner.nextInt();
         }
+        System.out.println("Вы ввели значение из диопазаона!");
+        return y;
     }
 
     String cyclewhile(String z) {
-        while (!Objects.equals(z, "Exit")) {
+        while (!z.equals("Exit")) {
             System.out.println("Введите значение еще раз:");
             z = scanner.nextLine();
         }
@@ -36,9 +33,8 @@ class Homework3 {
     }
 
     int massivProgramm(int q) {
-        while (true) {
-            String[] programmArray = new String[]{"Выход", "Euronews", "Discovery", "Sport-tv", "HBO", "Nickelodeon"};
-            while (programmArray[q].equals(programmArray[q])) {
+        String[] programmArray = new String[]{"Выход", "Euronews", "Discovery", "Sport-tv", "HBO", "Nickelodeon"};
+            while (true) {
                 if (programmArray[q].equals(programmArray[0])) {
                     System.out.println("Звершенине программы");
                     return q;
@@ -50,13 +46,11 @@ class Homework3 {
             }
         }
     }
-}
 
 public class Main {
     static int cycleFor;
     static int ifElse;
-    static String cycleWhile;
-    static int massiveElement;
+    static String cycleWhile;;
 
     public static void main(String[] args) {
         Homework3 param1 = new Homework3();
