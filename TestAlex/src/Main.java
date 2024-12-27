@@ -1,64 +1,83 @@
 import java.util.Scanner;
 
+class Homework3 {
+    Scanner scanner = new Scanner(System.in);
+
+    int cylcefor(int x) {
+        int sum = 0;
+        int i;
+        for (i = 0; i <= x; i++) {
+            sum += i;
+        }
+        for (i = 0; i >= x; i--) {
+            sum += i;
+        }
+        return (sum);
+    }
+
+    int ifwhile(int y) {
+        while (100 < y || y < 0) {
+            System.out.println("Значение за границами диапазона (от 100 до 0), повторите еще раз:");
+            y = scanner.nextInt();
+        }
+        System.out.println("Вы ввели значение из диопазаона!");
+        return y;
+    }
+
+    String cyclewhile(String z) {
+        while (!z.equals("Exit")) {
+            System.out.println("Введите значение еще раз:");
+            z = scanner.nextLine();
+        }
+        return z;
+    }
+
+    int massivProgramm(int q) {
+        String[] programmArray = new String[]{"Выход", "Euronews", "Discovery", "Sport-tv", "HBO", "Nickelodeon"};
+            while (true) {
+                if (programmArray[q].equals(programmArray[0])) {
+                    System.out.println("Звершенине программы");
+                    return q;
+                }
+                System.out.println("Выбранный канал: " + programmArray[q]);
+                System.out.println();
+                System.out.println("Выберити следущий канал: ");
+                q = scanner.nextInt();
+            }
+        }
+    }
 
 public class Main {
-    static String nameStudent = "Aleksandr";
-    static String surnameStudent = "Pronushkin";
-    static String workStudent = "QA Engineer";
-    static byte typeBytePrint = 127;
-    static short typeShortPrint = 200;
-    static int typeIntPrint = 1000;
-    static float typeFloatPrint = 1366.4F;
-    static double typeDoublePrint = 2566.6;
-    static long typeLongPrint = 500000;
-    static String textForAnalysis = "Test";
-    static String textKeywords1 = "Text";
-    static String textKeywords2 = "Pass";
-    static String textKeywords3 = "Verification";
-    static int addIntValueAtText = 5;
-    static String addStringValueAtText = "Ueeeee!";
-    static String printAddText;
+    static int cycleFor;
+    static int ifElse;
+    static String cycleWhile;;
 
     public static void main(String[] args) {
+        Homework3 param1 = new Homework3();
+        Homework3 param2 = new Homework3();
+        Homework3 param3 = new Homework3();
+        Homework3 param4 = new Homework3();
         Scanner scanner = new Scanner(System.in);
-        StringBuffer testStringModefied = new StringBuffer("11. Entered text: " + textForAnalysis + " And Checking");
-        testStringModefied.append(" String");
-        testStringModefied.append(" Modified");
+        System.out.println("Задание 1. Введите цифру для вычесления в цикле for:");
+        int inputValue = scanner.nextInt();
+        cycleFor = param1.cylcefor(inputValue);
         System.out.println();
-        System.out.println("Byte value: " + typeBytePrint);
-        System.out.println("Short value: " + typeShortPrint);
-        System.out.println("Int value: " + typeIntPrint);
-        System.out.println("Float value: " + typeFloatPrint);
-        System.out.println("Double value: " + typeDoublePrint);
-        System.out.println("Long value: " + typeLongPrint);
+        System.out.println("Результат:" + cycleFor);
         System.out.println();
-        System.out.println("Name Student: " + nameStudent);
-        System.out.println("Surname Student: " + surnameStudent);
-        System.out.println("Work Student: " + workStudent);
+        System.out.println("Задание 2. Введите цифру в диопазоне от 0 до 100");
+        int inputValue1 = scanner.nextInt();
+        scanner.nextLine();
+        ifElse = param2.ifwhile(inputValue1);
+        System.out.println("Результат:" + ifElse);
         System.out.println();
-        for (int i = 0; i <= i; i++) {
-            System.out.println("Text keywords: " + '\n' + textKeywords1 + '\n' + textKeywords2 + '\n' + textKeywords3);
-            System.out.println();
-            System.out.println("Words in the data base: " + '\n' + textForAnalysis + '\n' + "Input your text for analysis: ");
-            System.out.println();
-            String inputText = scanner.nextLine();
-            System.out.println();
-            System.out.println("Result:");
-            System.out.println("1. Received text: " + inputText);
-            System.out.println("2. Length text: " + inputText.length());
-            System.out.println("3. Letter number: ");
-            for (int j = 0; j < inputText.length(); j++) {
-                System.out.println("Letter number " + j + " in text: " + inputText.charAt(j));
-            }
-            System.out.println("4. Text match check: " + inputText.equals(textForAnalysis));
-            System.out.println("5. Checking for an empty string: " + inputText.isEmpty());
-            System.out.println("6. Upper case is ignored: " + inputText.equalsIgnoreCase(textForAnalysis));
-            System.out.println("7. Checking entered keywords: " + '\n' + inputText.startsWith(textKeywords1) + '\n' + inputText.contains(textKeywords2) + '\n' + inputText.endsWith(textKeywords3));
-            System.out.println("8. Replace words: " + inputText.replace("", "_"));
-            System.out.println("9. Converting text to lower case: " + inputText.toLowerCase());
-            System.out.println("10. Format text: " + printAddText.format(inputText + " +add new value: %d, and text: %s", addIntValueAtText, addStringValueAtText));
-            System.out.println(testStringModefied);
-            System.out.println();
-        }
+        System.out.println("Задание 3. Введите слово Exit для выхода из цикла while");
+        String inputText = scanner.nextLine();
+        cycleWhile = param3.cyclewhile(inputText);
+        System.out.println("Результат:" + cycleWhile);
+        System.out.println();
+        System.out.println("Задание 4. Выберите канал для просмотра");
+        int inputValue2 = scanner.nextInt();
+        scanner.nextLine();
+        param4.massivProgramm(inputValue2);
     }
 }
